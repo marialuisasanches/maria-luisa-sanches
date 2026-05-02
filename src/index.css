@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+
+  overflow: hidden;
+}
+
+:root {
+  /* cores */
+
+  --color-black: #000000; /* preto puro */
+  --color-bg: #280b0f; /* Italian Roast — fundo */
+  --color-surface: #361319; /* Tamarind — cards/seções */
+  --color-primary: #6d3a3c; /* Rubine — botões/destaques */
+  --color-border: #7b694e; /* Boho — bordas/separadores */
+  --color-text: #c6b39a; /* Camel Coat — texto principal */
+  --color-text-muted: #7b694e; /* Boho — texto secundário */
+  --color-white: #f5eae0; /* off-white quente */
+
+  --font-display: "Cormorant", serif; /* títulos */
+  --font-body: "Outfit", sans-serif; /* corpo/UI */
+
+  /* espaçamentos */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+}
