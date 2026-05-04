@@ -54,8 +54,9 @@ function Hello() {
   return (
     <motion.div
       className={styles.container}
-      initial={{ borderRadius: "0px", y: 0 }}
-      exit={{ borderRadius: "0px 0px 40px 40px", y: "-100vh" }}
+      initial={{ y: "-100vh" }}
+      animate={{ y: 0 }}
+      exit={{ y: "-100vh" }}
       transition={{ duration: 0.8, ease: "easeInOut" }}
     >
       <h2
@@ -63,6 +64,11 @@ function Hello() {
       >
         {greetings[current].word}
       </h2>
+
+      <div className={styles.scrollHint}>
+        <span>scroll</span>
+        <div className={styles.arrow} />
+      </div>
     </motion.div>
   );
 }

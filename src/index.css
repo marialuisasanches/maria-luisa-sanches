@@ -29,6 +29,7 @@ body,
 
   --font-display: "Cormorant", serif; /* títulos */
   --font-body: "Outfit", sans-serif; /* corpo/UI */
+  --font-cursive: "Pinyon Script", cursive;
 
   /* espaçamentos */
   --radius-sm: 6px;

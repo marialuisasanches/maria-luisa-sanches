@@ -22,3 +22,39 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+.scrollHint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: bounce 2s infinite;
+}
+
+.arrow {
+  width: 1px;
+  height: 40px;
+  background: var(--color-text-muted);
+  animation: grow 2s infinite;
+}
+
+@keyframes grow {
+  0%,
+  100% {
+    height: 20px;
+    opacity: 0.3;
+  }
+  50% {
+    height: 40px;
+    opacity: 1;
+  }
+}
