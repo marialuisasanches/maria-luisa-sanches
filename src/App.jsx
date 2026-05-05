@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Achievements from "./pages/Achievements";
 import Skills from "./pages/Skills";
+import Projects from "./pages/Projects";
 
 function App() {
   return (
@@ -33,6 +34,12 @@ function App() {
         style={{ scrollSnapAlign: "start", height: "100vh" }}
       >
         <Skills />
+      </section>
+      <section
+        id="projects"
+        style={{ scrollSnapAlign: "start", height: "100vh" }}
+      >
+        <Projects />
       </section>
     </main>
   );

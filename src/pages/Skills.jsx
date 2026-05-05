@@ -16,7 +16,7 @@ const skills = [
   {
     name: "CSS",
     category: "Frontend",
-    svg: "https://cdn.simpleicons.org/css3/6d3a3c",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
   },
   {
     name: "HTML",

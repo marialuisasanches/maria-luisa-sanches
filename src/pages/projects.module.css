@@ -1,0 +1,78 @@
+.container {
+  height: 100vh;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.terminal {
+  width: 70%;
+  height: 80vh;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  font-family: "Courier New", monospace;
+}
+
+.bar {
+  background: var(--color-surface);
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.barTitle {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05rem;
+}
+
+.body {
+  background: var(--color-bg);
+  padding: 1.5rem;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cmd {
+  color: var(--color-white);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.prompt {
+  color: var(--color-primary);
+  margin-right: 0.3rem;
+}
+
+.output {
+  color: var(--color-text);
+  font-size: 0.85rem;
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.cursor {
+  color: var(--color-primary);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
