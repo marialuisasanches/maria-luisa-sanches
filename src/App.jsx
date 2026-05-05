@@ -1,27 +1,26 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
-import Hello from "./pages/hello";
+import Hello from "./pages/Hello";
 import Home from "./pages/Home";
-
-function AnimatedRoutes() {
-  const location = useLocation();
-
-  return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Hello />} />
-        <Route path="/hello" element={<Hello />} />
-        <Route path="/home" element={<Home />} />
-      </Routes>
-    </AnimatePresence>
-  );
-}
+import About from "./pages/About";
 
 function App() {
   return (
-    <BrowserRouter>
-      <AnimatedRoutes />
-    </BrowserRouter>
+    <main
+      style={{
+        height: "100vh",
+        overflowY: "scroll",
+        scrollSnapType: "y mandatory",
+      }}
+    >
+      <section id="hello" style={{ scrollSnapAlign: "start", height: "100vh" }}>
+        <Hello />
+      </section>
+      <section id="home" style={{ scrollSnapAlign: "start", height: "100vh" }}>
+        <Home />
+      </section>
+      <section id="about" style={{ scrollSnapAlign: "start", height: "100vh" }}>
+        <About />
+      </section>
+    </main>
   );
 }
 

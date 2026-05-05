@@ -124,7 +124,7 @@
 .heroName {
   font-family: var(--font-display);
   font-size: 14rem;
-  color: var(--color-text);
+  color: var(--color-primary);
   margin: 0;
   line-height: 1;
   letter-spacing: 4px;

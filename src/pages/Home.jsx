@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Spline from "@splinetool/react-spline";
@@ -8,33 +7,17 @@ const roles = [
   "Maria Luisa Sanches",
   "Frontend Developer",
   "UI Designer",
-  "Creative Coder",
+  "React Developer",
 ];
 
 function Home() {
-  const navigate = useNavigate();
   const [selectedSection, setSelectedSection] = useState("Home");
   const [currentRole, setCurrentRole] = useState(0);
   const [roleVisible, setRoleVisible] = useState(true);
   const [splineLoaded, setSplineLoaded] = useState(false);
   const heroNameRef = useRef(null);
 
-  const onSplineLoad = () => {
-    setSplineLoaded(true);
-  };
-
-  useEffect(() => {
-    let navigating = false;
-    const handleScroll = (e) => {
-      if (navigating) return;
-      if (e.deltaY < 0) {
-        navigating = true;
-        navigate("/hello");
-      }
-    };
-    window.addEventListener("wheel", handleScroll);
-    return () => window.removeEventListener("wheel", handleScroll);
-  }, [navigate]);
+  const onSplineLoad = () => setSplineLoaded(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -76,14 +59,7 @@ function Home() {
   ];
 
   return (
-    <motion.div
-      className={styles.container}
-      initial={{ y: "100vh" }}
-      animate={{ y: 0 }}
-      exit={{ y: "100vh" }}
-      transition={{ duration: 0.8, ease: "easeInOut" }}
-    >
-      {/* ── ROBÔ SPLINE ── */}
+    <div className={styles.container}>
       <motion.div
         className={styles.splineWrapper}
         initial={{ opacity: 0, scale: 0.95 }}
@@ -97,30 +73,21 @@ function Home() {
           <Spline
             scene="https://prod.spline.design/kNqea8ru4A73BV59/scene.splinecode"
             onLoad={onSplineLoad}
-            style={{
-              width: "100%",
-              height: "100%",
-              pointerEvents: "all",
-              transform: "translateX(0%)",
-            }}
+            style={{ width: "100%", height: "100%", pointerEvents: "all" }}
           />
         </div>
       </motion.div>
 
-      {/* ── LOGO ── */}
       <p className={styles.logo}>
         <span>Maria Luisa</span>
         <span>Sanches</span>
       </p>
 
-      {/* ── NAV ── */}
       <nav className={styles.nav}>
         {sections.map((section) => (
           <a
             key={section}
-            className={`${styles.navItem} ${
-              selectedSection === section ? styles.active : ""
-            }`}
+            className={`${styles.navItem} ${selectedSection === section ? styles.active : ""}`}
             href={`#${section.toLowerCase()}`}
             onClick={() => setSelectedSection(section)}
           >
@@ -129,7 +96,6 @@ function Home() {
         ))}
       </nav>
 
-      {/* ── HERO NAME ── */}
       <div className={styles.hero}>
         <h1
           ref={heroNameRef}
@@ -142,7 +108,7 @@ function Home() {
           {roles[currentRole]}
         </h1>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
