@@ -230,10 +230,10 @@ function About() {
           </div>
           <div className={styles.windowRight}>
             <p className={styles.bio}>
-              Desenvolvedora Front-End em formação, cursando Sistemas de
-              Informação no IFF. Construo interfaces modernas com React,
-              JavaScript e CSS — sempre com atenção obsessiva aos detalhes e
-              foco na experiência do usuário.
+              Desenvolvedora Front-End, cursando Sistemas de Informação no IFF.
+              Construo interfaces modernas com React, JavaScript e CSS, sempre
+              com atenção obsessiva aos detalhes e foco na experiência do
+              usuário.
             </p>
             <p className={styles.bio}>
               Em 2026, fiquei em <strong>9º lugar no Hackathon NewHack</strong>,

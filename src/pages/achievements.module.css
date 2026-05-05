@@ -1,0 +1,362 @@
+/* ── Section ── */
+.achievements {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 2rem 3rem;
+  overflow: hidden;
+}
+
+.achievements::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, #c6b39a14 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+/* ── Header ── */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 20px;
+  letter-spacing: 0.4em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-white);
+}
+
+.divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #b8922a, transparent);
+  margin: 1rem auto 0;
+}
+
+/* ── Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.4rem 1.2rem;
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Frame wrapper ── */
+.frameWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* ── Frame ── */
+.frame {
+  width: 100%;
+  aspect-ratio: 1 / 1.7;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.35s ease;
+}
+
+.frame:hover {
+  transform: translateY(-6px) scale(1.015);
+}
+
+.frameReserved {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ── Wire & Nail ── */
+.wire {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 10px;
+  border-bottom: 1px solid rgba(180, 140, 80, 0.45);
+  border-radius: 0 0 50% 50%;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.nail {
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle at 35% 35%, #d4a843, #6a4e10);
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+/* ── Frame outer (moldura dourada) ── */
+.frameOuter {
+  position: absolute;
+  inset: 0;
+  border-radius: 3px;
+  background: linear-gradient(
+    135deg,
+    #d4a843 0%,
+    #8a6a1a 30%,
+    #c89a2e 50%,
+    #8a6a1a 70%,
+    #d4a843 100%
+  );
+  padding: 12px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+    inset 0 0 0 2px rgba(0, 0, 0, 0.3),
+    0 8px 32px rgba(0, 0, 0, 0.6),
+    0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.frameFeatured .frameOuter {
+  background: linear-gradient(
+    135deg,
+    #e8c060 0%,
+    #9a7820 30%,
+    #d4a843 50%,
+    #9a7820 70%,
+    #e8c060 100%
+  );
+}
+
+.frameOuterReserved {
+  background: linear-gradient(
+    135deg,
+    #5a4a3a 0%,
+    #3a2e20 30%,
+    #5a4a3a 50%,
+    #3a2e20 70%,
+    #5a4a3a 100%
+  ) !important;
+}
+
+/* ── Inner border decoration ── */
+.frameInnerBorder {
+  position: absolute;
+  inset: 12px;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.frameInnerBorder::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 0.5px solid rgba(0, 0, 0, 0.3);
+}
+
+/* ── Canvas (interior do quadro) ── */
+.frameCanvas {
+  position: absolute;
+  inset: 14px;
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 0.8rem;
+  gap: 0.5rem;
+  overflow: hidden;
+}
+
+.frameCanvas::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 30% 20%,
+    rgba(180, 140, 80, 0.07) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.frameFeatured .frameCanvas {
+  background: #3a1520;
+}
+
+.frameCanvasReserved {
+  background: #261019 !important;
+  border: 1px dashed rgba(180, 140, 80, 0.2);
+}
+
+/* ── Canvas content ── */
+.frameYear {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: #b8922a;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.frameYearMuted {
+  color: var(--color-text-muted);
+}
+
+.frameFeatured .frameYear {
+  color: #e8c060;
+  letter-spacing: 0.3em;
+}
+
+.frameTitle {
+  font-family: var(--font-display);
+  font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+  font-weight: 600;
+  color: var(--color-white);
+  text-align: center;
+  line-height: 1.35;
+  position: relative;
+  z-index: 1;
+}
+
+.frameTitleMuted {
+  color: var(--color-text-muted);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+.frameFeatured .frameTitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.frameDivider {
+  width: 34px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d4a843, transparent);
+  position: relative;
+  z-index: 1;
+}
+
+.frameDesc {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--color-text);
+  text-align: center;
+  line-height: 1.65;
+  opacity: 0.85;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Hover overlay com descrição ── */
+.frameHover {
+  position: absolute;
+  inset: 0;
+  background: rgba(40, 11, 15, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 2;
+}
+
+.frame:hover .frameHover {
+  opacity: 1;
+}
+
+.frameHoverText {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--color-text);
+  text-align: center;
+  line-height: 1.7;
+}
+
+.frameDescMuted {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+
+/* ── Plaque ── */
+.plaque {
+  background: linear-gradient(135deg, #c89a2e, #a07820, #c89a2e);
+  border-radius: 3px;
+  padding: 5px 14px;
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.plaqueFeatured {
+  background: linear-gradient(135deg, #e8c060, #b08820, #e8c060);
+}
+
+.plaqueReserved {
+  background: linear-gradient(135deg, #5a4a3a, #3a2e20, #5a4a3a) !important;
+}
+
+.plaqueText {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #1a0d04;
+  text-align: center;
+  font-style: italic;
+}
+
+.plaqueTextMuted {
+  color: #8a7a6a;
+}
+
+/* ── Responsivo ── */
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem 1.2rem;
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 560px) {
+  .achievements {
+    padding: 2rem 1rem 2.5rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.4rem 0.9rem;
+  }
+
+  .frameDesc {
+    display: none;
+  }
+}
