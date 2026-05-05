@@ -40,7 +40,7 @@ const achievements = [
 
 export default function Achievements() {
   return (
-    <section className={styles.achievements} id="conquistas">
+    <section className={styles.achievements} id="Timeline">
       <div className={styles.header}>
         <p className={styles.label}>Galeria de</p>
         <h2 className={styles.title}>Conquistas</h2>

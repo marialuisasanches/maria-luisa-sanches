@@ -2,6 +2,7 @@ import Hello from "./pages/Hello";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Achievements from "./pages/Achievements";
+import Skills from "./pages/Skills";
 
 function App() {
   return (
@@ -22,10 +23,16 @@ function App() {
         <About />
       </section>
       <section
-        id="achievements"
+        id="timeline"
         style={{ scrollSnapAlign: "start", height: "100vh" }}
       >
         <Achievements />
+      </section>
+      <section
+        id="skills"
+        style={{ scrollSnapAlign: "start", height: "100vh" }}
+      >
+        <Skills />
       </section>
     </main>
   );

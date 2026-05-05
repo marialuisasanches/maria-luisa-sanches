@@ -1,0 +1,94 @@
+.container {
+  height: 100vh;
+  overflow: hidden;
+  background: var(--color-white);
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  top: 4rem;
+  left: 5rem;
+  font-family: var(--font-display);
+  font-size: 5rem;
+  color: var(--color-bg);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: var(--color-text-muted);
+}
+
+.image {
+  position: absolute;
+  top: 50%;
+  right: -24%;
+  transform: translate(-50%, -45%);
+  width: 600px;
+  height: auto;
+}
+
+/* Adicione ao skills.module.css */
+
+.grid {
+  position: absolute;
+  top: 50%;
+  left: 5rem;
+  transform: translateY(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  width: 52%;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 0.4rem;
+  padding: 1.2rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+  cursor: default;
+  flex: 0 0 calc(20% - 1rem);
+}
+
+.card:hover {
+  background: rgba(109, 58, 60, 0.07);
+  transform: translateY(-3px);
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  filter: sepia(1) saturate(0.5) hue-rotate(300deg);
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.card:hover .icon {
+  opacity: 1;
+}
+
+.skillName {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+
+.skillCategory {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  color: var(--color-border);
+  text-align: center;
+  letter-spacing: 0.03rem;
+}

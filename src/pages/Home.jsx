@@ -89,7 +89,16 @@ function Home() {
             key={section}
             className={`${styles.navItem} ${selectedSection === section ? styles.active : ""}`}
             href={`#${section.toLowerCase()}`}
-            onClick={() => setSelectedSection(section)}
+            onClick={(e) => {
+              e.preventDefault();
+              setSelectedSection(section);
+              const id =
+                section === "Timeline" ? "timeline" : section.toLowerCase();
+              const target = document.getElementById(id);
+              if (target) {
+                target.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
           >
             {section}
           </a>
