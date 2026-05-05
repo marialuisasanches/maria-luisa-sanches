@@ -53,8 +53,8 @@ function Home() {
     "Home",
     "About",
     "Timeline",
-    "Projects",
     "Skills",
+    "Projects",
     "Contact",
   ];
 

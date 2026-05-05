@@ -1,64 +1,84 @@
-import { useEffect, useState } from "react";
 import styles from "./projects.module.css";
+import dedoDeus from "../assets/dedoDeDeus.png";
+import dedoAdao from "../assets/dedoDeAdao.png";
+import Astrova from "../assets/astrova.png";
+import Reellist from "../assets/reellist.png";
+import ImpactHub from "../assets/impacthub.jpg";
+import CodeSprint from "../assets/codeSprint.png";
 
-const lines = [
-  { type: "cmd", text: "cd ./marialuisasanches" },
-  { type: "cmd", text: "cd ./projetos" },
-  { type: "cmd", text: "ls -la" },
-  { type: "output", text: "drwxr-xr-x  Astrova" },
-  { type: "output", text: "drwxr-xr-x  Reellist" },
-  { type: "output", text: "drwxr-xr-x  ImpactHub" },
-  { type: "output", text: "drwxr-xr-x  VectaBio" },
-  { type: "output", text: "drwxr-xr-x  CodeSprint" },
+const projects = [
+  {
+    title: "Astrova",
+    desc: "Plataforma de dados espaciais em React que consome múltiplas APIs da NASA para fornecer insights astronômicos em tempo real.",
+    techs: ["React", "JavaScript", "API"],
+    href: "https://astrova-rouge.vercel.app",
+    image: Astrova,
+  },
+  {
+    title: "Reellist",
+    desc: "Explore, busque e favorite filmes com a API do TMDB. React + Vite, com persistência local e deploy na Vercel.",
+    techs: ["React", "JavaScript", "API"],
+    href: "https://reellist.vercel.app",
+    image: Reellist,
+  },
+  {
+    title: "ImpactHub",
+    desc: "Plataforma web para gestão de eventos e iniciativas de ONGs, com feed dinâmico, autenticação e painel administrativo.",
+    techs: ["React", "TypeScript", "Tailwind", "Vite", "Vitest", "Playwright"],
+    href: "https://github.com/marialuisasanches/impacthub",
+    image: ImpactHub,
+  },
+  {
+    title: "VectaBio",
+    desc: "Landing page para o perfil de contabilidade VectaBio, com foco em apresentação de serviços e identidade visual da marca.",
+    techs: ["React", "JavaScript"],
+    href: "https://vecta-bio.vercel.app/",
+    image: null,
+  },
+  {
+    title: "CodeSprint",
+    desc: "Plataforma desktop que integra board visual, backlog e GitHub num fluxo baseado em markdown.",
+    techs: ["Electron", "React", "JavaScript"],
+    href: "https://github.com/marialuisasanches/CodeSprint",
+    image: CodeSprint,
+  },
 ];
 
 function Projects() {
-  const [visibleLines, setVisibleLines] = useState([]);
-
-  useEffect(() => {
-    let cancelled = false;
-    const timeouts = [];
-
-    lines.forEach((line, i) => {
-      const t = setTimeout(() => {
-        if (!cancelled) {
-          setVisibleLines((prev) => [...prev, line]);
-        }
-      }, i * 800);
-      timeouts.push(t);
-    });
-
-    return () => {
-      cancelled = true;
-      timeouts.forEach(clearTimeout);
-    };
-  }, []);
-
   return (
     <div className={styles.container}>
-      <div className={styles.terminal}>
-        <div className={styles.bar}>
-          <span className={styles.dot} style={{ background: "#c47a7a" }} />
-          <span className={styles.dot} style={{ background: "#c4a87a" }} />
-          <span className={styles.dot} style={{ background: "#7aaa8a" }} />
-          <span className={styles.barTitle}>
-            bash ~/marialuisasanches/projetos
-          </span>
-        </div>
-        <div className={styles.body}>
-          {visibleLines.map((line, i) => (
-            <p
-              key={i}
-              className={line.type === "cmd" ? styles.cmd : styles.output}
-            >
-              {line.type === "cmd" && (
-                <span className={styles.prompt}>~ $ </span>
-              )}
-              {line.text}
-            </p>
-          ))}
-          <span className={styles.cursor}>▋</span>
-        </div>
+      <img src={dedoDeus} alt="Dedo de Deus" className={styles.dedoDeus} />
+      <h1 className={styles.title}>Projetos</h1>
+      <img src={dedoAdao} alt="Dedo de Adão" className={styles.dedoAdao} />
+      <div className={styles.cards}>
+        {projects.map((project, index) => (
+          <a
+            key={index}
+            href={project.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.card}
+          >
+            {project.image && (
+              <img
+                src={project.image}
+                alt={project.title}
+                className={styles.cardImage}
+              />
+            )}
+            <div className={styles.cardBody}>
+              <h2 className={styles.cardTitle}>{project.title}</h2>
+              <p className={styles.cardDesc}>{project.desc}</p>
+              <div className={styles.techs}>
+                {project.techs.map((tech) => (
+                  <span key={tech} className={styles.tech}>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   );
