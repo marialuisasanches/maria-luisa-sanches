@@ -12,7 +12,7 @@ const lines = [
   { type: "output", text: "drwxr-xr-x  CodeSprint" },
 ];
 
-function Projects() {
+function Cmd() {
   const [visibleLines, setVisibleLines] = useState([]);
 
   useEffect(() => {
@@ -59,9 +59,13 @@ function Projects() {
           ))}
           <span className={styles.cursor}>▋</span>
         </div>
+        <div className={styles.scrollHint}>
+          <span>scroll</span>
+          <div className={styles.arrow} />
+        </div>
       </div>
     </div>
   );
 }
 
-export default Projects;
+export default Cmd;
