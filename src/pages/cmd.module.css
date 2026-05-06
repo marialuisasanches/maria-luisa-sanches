@@ -1,3 +1,5 @@
+/* ── cmd.module.css — Mobile-first ── */
+
 .container {
   height: 100vh;
   background: var(--color-bg);
@@ -7,15 +9,31 @@
   position: relative;
 }
 
+/* mobile base: quase full width */
 .terminal {
-  width: 70%;
-  height: 60vh;
+  width: 95%;
+  height: 70vh;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   overflow: hidden;
   font-family: "Courier New", monospace;
 }
 
+@media (min-width: 560px) {
+  .terminal {
+    width: 82%;
+    height: 65vh;
+  }
+}
+
+@media (min-width: 900px) {
+  .terminal {
+    width: 70%;
+    height: 60vh;
+  }
+}
+
+/* ── Bar ── */
 .bar {
   background: var(--color-surface);
   padding: 0.6rem 1rem;
@@ -40,19 +58,33 @@
   letter-spacing: 0.05rem;
 }
 
+/* ── Body ── */
 .body {
   background: var(--color-bg);
-  padding: 1.5rem;
+  padding: 1rem; /* mobile: padding menor */
   min-height: 320px;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
+@media (min-width: 560px) {
+  .body {
+    padding: 1.5rem;
+  }
+}
+
+/* ── Text ── */
 .cmd {
   color: var(--color-white);
-  font-size: 0.9rem;
+  font-size: 0.8rem; /* mobile: um pouco menor */
   margin: 0;
+}
+
+@media (min-width: 560px) {
+  .cmd {
+    font-size: 0.9rem;
+  }
 }
 
 .prompt {
@@ -62,15 +94,24 @@
 
 .output {
   color: var(--color-text);
-  font-size: 0.85rem;
+  font-size: 0.78rem; /* mobile: menor */
   margin: 0;
-  padding-left: 1rem;
+  padding-left: 0.75rem;
+}
+
+@media (min-width: 560px) {
+  .output {
+    font-size: 0.85rem;
+    padding-left: 1rem;
+  }
 }
 
 .cursor {
   color: var(--color-primary);
   animation: blink 1s step-end infinite;
 }
+
+/* ── Scroll hint ── */
 .scrollHint {
   position: absolute;
   bottom: 32px;
@@ -95,6 +136,7 @@
   animation: grow 2s infinite;
 }
 
+/* ── Keyframes ── */
 @keyframes grow {
   0%,
   100% {
