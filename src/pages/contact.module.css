@@ -1,0 +1,223 @@
+/* contact.module.css */
+
+.container {
+  height: 100vh;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.postcard {
+  display: flex;
+  flex-direction: row;
+  width: 780px;
+  min-height: 420px;
+  background: var(--color-text);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+/* bordas pontilhadas estilo postal */
+.postcard::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.left {
+  flex: 1;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.stamp {
+  align-self: flex-end;
+  border: 2px solid var(--color-primary);
+  padding: 0.5rem 0.8rem;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.stampText {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--color-bg);
+  font-weight: bold;
+}
+
+.stampSub {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.phrase {
+  font-family: var(--font-cursive);
+  font-size: 1.6rem;
+  color: var(--color-bg);
+  line-height: 1.8;
+}
+
+.phrase em {
+  color: var(--color-primary);
+  font-style: italic;
+}
+
+.divider {
+  width: 1px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--color-border) 0px,
+    var(--color-border) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  margin: 2rem 0;
+}
+
+.right {
+  flex: 1;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.addressBlock {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.to {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--color-bg);
+}
+
+.address {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--color-primary);
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.contactItem:hover {
+  opacity: 0.7;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: sepia(1) saturate(0.5) hue-rotate(300deg);
+}
+
+.contactLabel {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  margin: 0;
+}
+
+.contactValue {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-bg);
+  margin: 0;
+}
+
+.stamps {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+.stampSticker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  background: var(--color-text);
+  border: 2px solid var(--color-border);
+  border-radius: 4px;
+  padding: 0.6rem 0.5rem;
+  width: 70px;
+  /* efeito serrilhado de selo */
+  box-shadow:
+    0 0 0 3px var(--color-text),
+    0 0 0 4px var(--color-border);
+  transition: transform 0.2s ease;
+  position: relative;
+}
+
+.stampSticker:hover {
+  transform: rotate(-3deg) scale(1.05);
+}
+
+.stickerIcon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: sepia(1) saturate(0.5) hue-rotate(300deg);
+}
+
+.stickerLabel {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  margin: 0;
+}
+
+.cta {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  opacity: 0.7;
+  text-align: right;
+}

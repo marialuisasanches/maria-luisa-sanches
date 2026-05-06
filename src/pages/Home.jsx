@@ -11,7 +11,6 @@ const roles = [
 ];
 
 function Home() {
-  const [selectedSection, setSelectedSection] = useState("Home");
   const [currentRole, setCurrentRole] = useState(0);
   const [roleVisible, setRoleVisible] = useState(true);
   const [splineLoaded, setSplineLoaded] = useState(false);
@@ -49,15 +48,6 @@ function Home() {
     return () => window.removeEventListener("resize", fitHeroName);
   }, [currentRole]);
 
-  const sections = [
-    "Home",
-    "About",
-    "Timeline",
-    "Skills",
-    "Projects",
-    "Contact",
-  ];
-
   return (
     <div className={styles.container}>
       <motion.div
@@ -77,33 +67,10 @@ function Home() {
           />
         </div>
       </motion.div>
-
       <p className={styles.logo}>
         <span>Maria Luisa</span>
         <span>Sanches</span>
       </p>
-
-      <nav className={styles.nav}>
-        {sections.map((section) => (
-          <a
-            key={section}
-            className={`${styles.navItem} ${selectedSection === section ? styles.active : ""}`}
-            href={`#${section.toLowerCase()}`}
-            onClick={(e) => {
-              e.preventDefault();
-              setSelectedSection(section);
-              const id =
-                section === "Timeline" ? "timeline" : section.toLowerCase();
-              const target = document.getElementById(id);
-              if (target) {
-                target.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
-          >
-            {section}
-          </a>
-        ))}
-      </nav>
 
       <div className={styles.hero}>
         <h1

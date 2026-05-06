@@ -21,13 +21,11 @@
 .image {
   position: absolute;
   top: 50%;
-  right: -24%;
+  right: -18%;
   transform: translate(-50%, -45%);
   width: 600px;
   height: auto;
 }
-
-/* Adicione ao skills.module.css */
 
 .grid {
   position: absolute;

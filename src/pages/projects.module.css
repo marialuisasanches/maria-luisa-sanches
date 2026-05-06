@@ -58,6 +58,7 @@
 }
 
 .card {
+  margin-top: 1rem;
   max-height: 220px;
   background: transparent;
   backdrop-filter: blur(6px);
