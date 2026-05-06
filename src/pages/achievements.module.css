@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2.5rem 2rem 3rem;
+  padding: 2rem 1rem 2.5rem; /* mobile base */
   overflow: hidden;
 }
 
@@ -53,15 +53,40 @@
   margin: 1rem auto 0;
 }
 
-/* ── Grid ── */
+/* ── Grid — mobile base: 2 colunas ── */
 .grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 1.4rem 1.2rem;
-  max-width: 1100px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem 0.9rem;
   width: 100%;
   position: relative;
   z-index: 2;
+}
+
+/* tablet: 3 colunas */
+@media (min-width: 560px) {
+  .achievements {
+    padding: 2.5rem 1.5rem 3rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem 1.2rem;
+    max-width: 680px;
+  }
+}
+
+/* desktop: 6 colunas, layout original */
+@media (min-width: 1000px) {
+  .achievements {
+    padding: 2.5rem 2rem 3rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.4rem 1.2rem;
+    max-width: 1100px;
+  }
 }
 
 /* ── Frame wrapper ── */
@@ -262,7 +287,9 @@
   z-index: 1;
 }
 
+/* frameDesc: escondido no mobile, aparece no tablet+ */
 .frameDesc {
+  display: none;
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 300;
@@ -272,6 +299,12 @@
   opacity: 0.85;
   position: relative;
   z-index: 1;
+}
+
+@media (min-width: 560px) {
+  .frameDesc {
+    display: block;
+  }
 }
 
 /* ── Hover overlay com descrição ── */
@@ -308,6 +341,7 @@
 
 /* ── Plaque ── */
 .plaque {
+  display: none; /* mobile: escondido */
   background: linear-gradient(135deg, #c89a2e, #a07820, #c89a2e);
   border-radius: 3px;
   padding: 5px 14px;
@@ -337,26 +371,14 @@
   color: #8a7a6a;
 }
 
-/* ── Responsivo ── */
-@media (max-width: 1000px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.6rem 1.2rem;
-    max-width: 680px;
-  }
-}
-
-@media (max-width: 560px) {
-  .achievements {
-    padding: 2rem 1rem 2.5rem;
+@media (min-width: 560px) {
+  .plaque {
+    display: block;
+    padding: 5px 14px;
   }
 
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.4rem 0.9rem;
-  }
-
-  .frameDesc {
-    display: none;
+  .plaqueText {
+    font-size: 11px;
+    letter-spacing: 0.1em;
   }
 }
