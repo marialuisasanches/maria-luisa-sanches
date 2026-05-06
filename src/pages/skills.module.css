@@ -7,45 +7,41 @@
 
 .title {
   position: absolute;
-  top: 4rem;
-  left: 5rem;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: var(--font-display);
-  font-size: 5rem;
-  color: var(--color-bg);
+  font-size: 2rem;
+  color: var(--color-text-muted);
   margin: 0;
   text-transform: uppercase;
-  letter-spacing: 0.5rem;
-  color: var(--color-text-muted);
+  letter-spacing: 0.2rem;
+  white-space: nowrap;
 }
 
 .image {
-  position: absolute;
-  top: 50%;
-  right: -18%;
-  transform: translate(-50%, -45%);
-  width: 600px;
-  height: auto;
+  display: none;
 }
 
 .grid {
   position: absolute;
   top: 50%;
-  left: 5rem;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-wrap: wrap;
-  gap: 1.2rem;
-  width: 52%;
+  gap: 0.6rem;
+  width: calc(100% - 2rem);
   justify-content: center;
+  margin-top: 1rem;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  gap: 0.4rem;
-  padding: 1.2rem 0.8rem;
+  gap: 0.3rem;
+  padding: 0.7rem 0.5rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   background: transparent;
@@ -53,7 +49,7 @@
     background 0.2s ease,
     transform 0.2s ease;
   cursor: default;
-  flex: 0 0 calc(20% - 1rem);
+  flex: 0 0 calc(25% - 0.6rem);
 }
 
 .card:hover {
@@ -62,8 +58,8 @@
 }
 
 .icon {
-  width: 36px;
-  height: 36px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
   filter: sepia(1) saturate(0.5) hue-rotate(300deg);
   opacity: 0.75;
@@ -76,17 +72,166 @@
 
 .skillName {
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.55rem;
   color: var(--color-text-muted);
   text-align: center;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.03rem;
   text-transform: uppercase;
 }
 
 .skillCategory {
   font-family: var(--font-body);
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   color: var(--color-border);
   text-align: center;
-  letter-spacing: 0.03rem;
+  letter-spacing: 0.02rem;
+}
+
+/* ── Tablet 560px ── */
+@media (min-width: 560px) {
+  .title {
+    top: 2rem;
+    left: 3rem;
+    transform: none;
+    font-size: 3rem;
+    letter-spacing: 0.3rem;
+  }
+
+  .grid {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 0.8rem;
+    width: calc(100% - 4rem);
+    margin-top: 1.5rem;
+  }
+
+  .card {
+    flex: 0 0 calc(20% - 0.8rem);
+    padding: 0.9rem 0.6rem;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .skillName {
+    font-size: 0.6rem;
+  }
+
+  .skillCategory {
+    font-size: 0.52rem;
+  }
+}
+
+/* ── Tablet 700px ── */
+@media (min-width: 700px) {
+  .title {
+    font-size: 3.5rem;
+    left: 4rem;
+  }
+
+  .grid {
+    width: 60%;
+    left: 5rem;
+    transform: translateY(-50%);
+    gap: 1rem;
+  }
+
+  .card {
+    flex: 0 0 calc(20% - 1rem);
+    padding: 1rem 0.7rem;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* ── Desktop 900px ── */
+@media (min-width: 900px) {
+  .title {
+    top: 3rem;
+    left: 5rem;
+    font-size: 4rem;
+    letter-spacing: 0.4rem;
+  }
+
+  .image {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -18%;
+    transform: translate(-50%, -45%);
+    width: 480px;
+    height: auto;
+  }
+
+  .grid {
+    top: 50%;
+    left: 5rem;
+    transform: translateY(-50%);
+    gap: 1rem;
+    width: 50%;
+  }
+
+  .card {
+    flex: 0 0 calc(20% - 1rem);
+    padding: 1rem 0.7rem;
+    gap: 0.35rem;
+  }
+
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .skillName {
+    font-size: 0.65rem;
+    letter-spacing: 0.04rem;
+  }
+
+  .skillCategory {
+    font-size: 0.55rem;
+  }
+}
+
+/* ── Desktop 1000px ── */
+@media (min-width: 1000px) {
+  .title {
+    top: 4rem;
+    font-size: 5rem;
+    letter-spacing: 0.5rem;
+  }
+
+  .image {
+    width: 600px;
+  }
+
+  .grid {
+    width: 52%;
+    gap: 1.2rem;
+  }
+
+  .card {
+    padding: 1.2rem 0.8rem;
+    gap: 0.4rem;
+  }
+
+  .icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .skillName {
+    font-size: 0.7rem;
+    letter-spacing: 0.05rem;
+  }
+
+  .skillCategory {
+    font-size: 0.6rem;
+    letter-spacing: 0.03rem;
+  }
 }
