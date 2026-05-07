@@ -81,3 +81,7 @@ Acesse `http://localhost:5173` no navegador.
 
 - LinkedIn: [linkedin.com/in/maria-luisa-sanches](https://linkedin.com/in/maria-luisa-sanches)
 - GitHub: [github.com/marialuisasanches](https://github.com/marialuisasanches)
+
+## Licença
+
+Distribuído sob a licença MIT. Veja [LICENSE](./LICENSE) para mais informações.
