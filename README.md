@@ -3,6 +3,7 @@
 **[→ Acesse em maria-luisa-sanches.vercel.app](https://maria-luisa-sanches.vercel.app)**
 
 ▶ Assista à demo do portfólio:
+
 [![Assistir demo do portfólio](https://img.youtube.com/vi/wjlN1A8cL4w/maxresdefault.jpg)](https://youtu.be/wjlN1A8cL4w)
 
 Portfólio pessoal desenvolvido com foco em identidade visual autoral e experiência de navegação cinematográfica. A estética combina paleta vinho escuro com elementos clássicos e interfaces inspiradas em sistemas operacionais e terminais.
