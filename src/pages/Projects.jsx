@@ -45,10 +45,10 @@ const projects = [
   },
 ];
 
-function Projects() {
-  const firstRow = projects.slice(0, 3);
-  const secondRow = projects.slice(3);
+const firstRow = projects.slice(0, 3);
+const secondRow = projects.slice(3);
 
+function Projects() {
   return (
     <div className={styles.container}>
       <img src={dedoDeus} alt="Dedo de Deus" className={styles.dedoDeus} />
@@ -56,7 +56,40 @@ function Projects() {
       <img src={dedoAdao} alt="Dedo de Adão" className={styles.dedoAdao} />
 
       <div className={styles.cards}>
-        <div className={styles.row}>
+        {/* grid único no mobile */}
+        <div className={styles.gridMobile}>
+          {projects.map((project, index) => (
+            <a
+              key={index}
+              href={project.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.card}
+            >
+              {project.image && (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className={styles.cardImage}
+                />
+              )}
+              <div className={styles.cardBody}>
+                <h2 className={styles.cardTitle}>{project.title}</h2>
+                <p className={styles.cardDesc}>{project.desc}</p>
+                <div className={styles.techs}>
+                  {project.techs.map((tech) => (
+                    <span key={tech} className={styles.tech}>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        {/* layout original no tablet+ */}
+        <div className={styles.rowDesktop}>
           {firstRow.map((project, index) => (
             <a
               key={index}
@@ -87,7 +120,7 @@ function Projects() {
           ))}
         </div>
 
-        <div className={styles.rowCentered}>
+        <div className={styles.rowCenteredDesktop}>
           {secondRow.map((project, index) => (
             <a
               key={index + 3}

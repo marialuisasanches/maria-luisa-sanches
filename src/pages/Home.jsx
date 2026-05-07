@@ -63,7 +63,7 @@ function Home() {
           <Spline
             scene="https://prod.spline.design/kNqea8ru4A73BV59/scene.splinecode"
             onLoad={onSplineLoad}
-            style={{ width: "100%", height: "100%", pointerEvents: "all" }}
+            style={{ width: "100%", height: "100%" }}
           />
         </div>
       </motion.div>
