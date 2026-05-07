@@ -1,4 +1,3 @@
-/* ── Section ── */
 .achievements {
   position: relative;
   width: 100%;
@@ -8,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1rem 2.5rem; /* mobile base */
+  padding: 2rem 1rem 2.5rem;
   overflow: hidden;
 }
 
@@ -21,7 +20,6 @@
   pointer-events: none;
 }
 
-/* ── Header ── */
 .header {
   text-align: center;
   margin-bottom: 2rem;
@@ -53,57 +51,29 @@
   margin: 1rem auto 0;
 }
 
-/* ── Grid — mobile base: 2 colunas ── */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.4rem 0.9rem;
-  width: 100%;
+  gap: 0.5rem 0.4rem;
+  width: 90%;
+  max-width: 280px;
   position: relative;
   z-index: 2;
 }
 
-/* tablet: 3 colunas */
-@media (min-width: 560px) {
-  .achievements {
-    padding: 2.5rem 1.5rem 3rem;
-  }
-
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.6rem 1.2rem;
-    max-width: 680px;
-  }
+.frame {
+  width: 100%;
+  aspect-ratio: 1 / 1.2;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.35s ease;
 }
 
-/* desktop: 6 colunas, layout original */
-@media (min-width: 1000px) {
-  .achievements {
-    padding: 2.5rem 2rem 3rem;
-  }
-
-  .grid {
-    grid-template-columns: repeat(6, 1fr);
-    gap: 1.4rem 1.2rem;
-    max-width: 1100px;
-  }
-}
-
-/* ── Frame wrapper ── */
 .frameWrap {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
-}
-
-/* ── Frame ── */
-.frame {
-  width: 100%;
-  aspect-ratio: 1 / 1.7;
-  position: relative;
-  cursor: pointer;
-  transition: transform 0.35s ease;
 }
 
 .frame:hover {
@@ -116,7 +86,6 @@
   pointer-events: none;
 }
 
-/* ── Wire & Nail ── */
 .wire {
   position: absolute;
   top: -4px;
@@ -143,7 +112,6 @@
   z-index: 5;
 }
 
-/* ── Frame outer (moldura dourada) ── */
 .frameOuter {
   position: absolute;
   inset: 0;
@@ -156,7 +124,7 @@
     #8a6a1a 70%,
     #d4a843 100%
   );
-  padding: 12px;
+  padding: 7px;
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.15),
     inset 0 0 0 2px rgba(0, 0, 0, 0.3),
@@ -186,10 +154,9 @@
   ) !important;
 }
 
-/* ── Inner border decoration ── */
 .frameInnerBorder {
   position: absolute;
-  inset: 12px;
+  inset: 7px;
   border: 1.5px solid rgba(255, 255, 255, 0.18);
   border-radius: 1px;
   z-index: 1;
@@ -203,17 +170,16 @@
   border: 0.5px solid rgba(0, 0, 0, 0.3);
 }
 
-/* ── Canvas (interior do quadro) ── */
 .frameCanvas {
   position: absolute;
-  inset: 14px;
+  inset: 8px;
   background: var(--color-surface);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0.9rem 0.8rem;
-  gap: 0.5rem;
+  padding: 0.4rem 0.3rem;
+  gap: 0.3rem;
   overflow: hidden;
 }
 
@@ -238,11 +204,10 @@
   border: 1px dashed rgba(180, 140, 80, 0.2);
 }
 
-/* ── Canvas content ── */
 .frameYear {
   font-family: var(--font-body);
-  font-size: 11px;
-  letter-spacing: 0.22em;
+  font-size: 9px;
+  letter-spacing: 0.15em;
   color: #b8922a;
   text-transform: uppercase;
   position: relative;
@@ -255,16 +220,16 @@
 
 .frameFeatured .frameYear {
   color: #e8c060;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.2em;
 }
 
 .frameTitle {
   font-family: var(--font-display);
-  font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+  font-size: 0.68rem;
   font-weight: 600;
   color: var(--color-white);
   text-align: center;
-  line-height: 1.35;
+  line-height: 1.3;
   position: relative;
   z-index: 1;
 }
@@ -272,22 +237,20 @@
 .frameTitleMuted {
   color: var(--color-text-muted);
   font-style: italic;
-  font-size: 0.95rem;
 }
 
 .frameFeatured .frameTitle {
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: 0.75rem;
 }
 
 .frameDivider {
-  width: 34px;
+  width: 24px;
   height: 1px;
   background: linear-gradient(90deg, transparent, #d4a843, transparent);
   position: relative;
   z-index: 1;
 }
 
-/* frameDesc: escondido no mobile, aparece no tablet+ */
 .frameDesc {
   display: none;
   font-family: var(--font-body);
@@ -301,13 +264,6 @@
   z-index: 1;
 }
 
-@media (min-width: 560px) {
-  .frameDesc {
-    display: block;
-  }
-}
-
-/* ── Hover overlay com descrição ── */
 .frameHover {
   position: absolute;
   inset: 0;
@@ -339,9 +295,8 @@
   opacity: 1;
 }
 
-/* ── Plaque ── */
 .plaque {
-  display: none; /* mobile: escondido */
+  display: none;
   background: linear-gradient(135deg, #c89a2e, #a07820, #c89a2e);
   border-radius: 3px;
   padding: 5px 14px;
@@ -371,7 +326,57 @@
   color: #8a7a6a;
 }
 
+/* ── tablet ── */
 @media (min-width: 560px) {
+  .achievements {
+    padding: 2.5rem 1.5rem 3rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem 0.8rem;
+    max-width: 580px;
+  }
+
+  .frame {
+    aspect-ratio: 1 / 1.4;
+  }
+
+  .frameOuter {
+    padding: 12px;
+  }
+
+  .frameInnerBorder {
+    inset: 12px;
+  }
+
+  .frameCanvas {
+    inset: 14px;
+    padding: 0.9rem 0.8rem;
+    gap: 0.5rem;
+  }
+
+  .frameYear {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+  }
+
+  .frameTitle {
+    font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+  }
+
+  .frameFeatured .frameTitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+  }
+
+  .frameDivider {
+    width: 34px;
+  }
+
+  .frameDesc {
+    display: block;
+  }
+
   .plaque {
     display: block;
     padding: 5px 14px;
@@ -380,5 +385,18 @@
   .plaqueText {
     font-size: 11px;
     letter-spacing: 0.1em;
+  }
+}
+
+/* ── desktop ── */
+@media (min-width: 1000px) {
+  .achievements {
+    padding: 2.5rem 2rem 3rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.4rem 1.2rem;
+    max-width: 1100px;
   }
 }
